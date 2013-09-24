@@ -1,0 +1,3 @@
+app_menu_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AppMenuBundle:Default:index }
