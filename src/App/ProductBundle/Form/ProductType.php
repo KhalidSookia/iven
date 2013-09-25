@@ -1,12 +1,12 @@
 <?php
 
-namespace App\MenuBundle\Form;
+namespace App\ProductBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class MenuType extends AbstractType
+class ProductType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
@@ -15,9 +15,10 @@ class MenuType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('active')
+            ->add('title')
+            ->add('description')
             ->add('path')
+            ->add('active')
         ;
     }
     
@@ -27,7 +28,7 @@ class MenuType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'App\MenuBundle\Entity\Menu'
+            'data_class' => 'App\ProductBundle\Entity\Product'
         ));
     }
 
@@ -36,6 +37,6 @@ class MenuType extends AbstractType
      */
     public function getName()
     {
-        return 'app_menubundle_menu';
+        return 'app_productbundle_product';
     }
 }

@@ -1,27 +1,27 @@
 <?php
 
-namespace App\MenuBundle\Controller;
+namespace App\ProductBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use App\MenuBundle\Entity\Menu;
-use App\MenuBundle\Form\MenuType;
+use App\ProductBundle\Entity\Product;
+use App\ProductBundle\Form\ProductType;
 
 /**
- * Menu controller.
+ * Product controller.
  *
- * @Route("/menu")
+ * @Route("/product")
  */
-class MenuController extends Controller
+class ProductController extends Controller
 {
 
     /**
-     * Lists all Menu entities.
+     * Lists all Product entities.
      *
-     * @Route("/", name="menu")
+     * @Route("/", name="product")
      * @Method("GET")
      * @Template()
      */
@@ -29,22 +29,22 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppMenuBundle:Menu')->findAll();
+        $entities = $em->getRepository('AppProductBundle:Product')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new Menu entity.
+     * Creates a new Product entity.
      *
-     * @Route("/", name="menu_create")
+     * @Route("/", name="product_create")
      * @Method("POST")
-     * @Template("AppMenuBundle:Menu:new.html.twig")
+     * @Template("AppProductBundle:Product:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Menu();
+        $entity = new Product();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -53,7 +53,7 @@ class MenuController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('menu_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('product_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class MenuController extends Controller
     }
 
     /**
-    * Creates a form to create a Menu entity.
+    * Creates a form to create a Product entity.
     *
-    * @param Menu $entity The entity
+    * @param Product $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createCreateForm(Menu $entity)
+    private function createCreateForm(Product $entity)
     {
-        $form = $this->createForm(new MenuType(), $entity, array(
-            'action' => $this->generateUrl('menu_create'),
+        $form = $this->createForm(new ProductType(), $entity, array(
+            'action' => $this->generateUrl('product_create'),
             'method' => 'POST',
         ));
 
@@ -82,15 +82,15 @@ class MenuController extends Controller
     }
 
     /**
-     * Displays a form to create a new Menu entity.
+     * Displays a form to create a new Product entity.
      *
-     * @Route("/new", name="menu_new")
+     * @Route("/new", name="product_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Menu();
+        $entity = new Product();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -100,9 +100,9 @@ class MenuController extends Controller
     }
 
     /**
-     * Finds and displays a Menu entity.
+     * Finds and displays a Product entity.
      *
-     * @Route("/{id}", name="menu_show")
+     * @Route("/{id}", name="product_show")
      * @Method("GET")
      * @Template()
      */
@@ -110,10 +110,10 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+        $entity = $em->getRepository('AppProductBundle:Product')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Menu entity.');
+            throw $this->createNotFoundException('Unable to find Product entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -125,9 +125,9 @@ class MenuController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Menu entity.
+     * Displays a form to edit an existing Product entity.
      *
-     * @Route("/{id}/edit", name="menu_edit")
+     * @Route("/{id}/edit", name="product_edit")
      * @Method("GET")
      * @Template()
      */
@@ -135,10 +135,10 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+        $entity = $em->getRepository('AppProductBundle:Product')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Menu entity.');
+            throw $this->createNotFoundException('Unable to find Product entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -152,16 +152,16 @@ class MenuController extends Controller
     }
 
     /**
-    * Creates a form to edit a Menu entity.
+    * Creates a form to edit a Product entity.
     *
-    * @param Menu $entity The entity
+    * @param Product $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Menu $entity)
+    private function createEditForm(Product $entity)
     {
-        $form = $this->createForm(new MenuType(), $entity, array(
-            'action' => $this->generateUrl('menu_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new ProductType(), $entity, array(
+            'action' => $this->generateUrl('product_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -170,20 +170,20 @@ class MenuController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Menu entity.
+     * Edits an existing Product entity.
      *
-     * @Route("/{id}", name="menu_update")
+     * @Route("/{id}", name="product_update")
      * @Method("PUT")
-     * @Template("AppMenuBundle:Menu:edit.html.twig")
+     * @Template("AppProductBundle:Product:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+        $entity = $em->getRepository('AppProductBundle:Product')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Menu entity.');
+            throw $this->createNotFoundException('Unable to find Product entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -193,7 +193,7 @@ class MenuController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('menu_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('product_edit', array('id' => $id)));
         }
 
         return array(
@@ -203,9 +203,9 @@ class MenuController extends Controller
         );
     }
     /**
-     * Deletes a Menu entity.
+     * Deletes a Product entity.
      *
-     * @Route("/{id}", name="menu_delete")
+     * @Route("/{id}", name="product_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -215,21 +215,21 @@ class MenuController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+            $entity = $em->getRepository('AppProductBundle:Product')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Menu entity.');
+                throw $this->createNotFoundException('Unable to find Product entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('menu'));
+        return $this->redirect($this->generateUrl('product'));
     }
 
     /**
-     * Creates a form to delete a Menu entity by id.
+     * Creates a form to delete a Product entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -238,21 +238,10 @@ class MenuController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('menu_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('product_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
-    }
-
-    public function menuAction(){
-        $em = $this->getDoctrine()->getManager();
-
-        $menus = $em->getRepository('AppMenuBundle:Menu')->findAll();
-
-        // if($menu == null){
-        //     throw $this->createNotFoundException('Menu non trouvé !!! Contacter le webmaster');
-        // }
-        return $this->render('AppMenuBundle:Menu:menu.html.twig', array('menus' => $menus));
     }
 }

@@ -1,3 +1,23 @@
-app_menu_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AppMenuBundle:Default:index }
+menu:
+    pattern:  /menu
+    defaults: { _controller: AppMenuBundle:menu:index }
+
+menu_new:
+    pattern:  /menu/new
+    defaults: { _controller: AppMenuBundle:menu:new }
+
+menu_create:
+    pattern:  /menu/create
+    defaults: { _controller: AppMenuBundle:menu:create }
+
+menu_show:
+    pattern:  /menu/{id}
+    defaults: { _controller: AppMenuBundle:menu:show }
+
+menu_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: AppMenuBundle:menu:edit }
+
+menu_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: AppMenuBundle:menu:delete }

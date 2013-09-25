@@ -4,29 +4,19 @@
         <meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
         <title>{% block title %}Music!{% endblock %}</title>
         {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/foundation.min.css') }}" />
         {% endblock %}
 
-        <!--[if lt IE 8.]><link rel="stylesheet" type="text/css" href="css/style-ie.css" /><![endif]-->
-        <!--[if lt IE 7.]><link rel="stylesheet" type="text/css" href="css/style-ie6.css" /><![endif]-->
-        <!--  STEP ONE: insert path to SWFObject JavaScript -->
-        {% block js %}
-            
-        <script type="text/javascript" src="{{ asset('js/swfobject/swfobject.js') }}"></script>
-        <!--  STEP TWO: configure SWFObject JavaScript and embed CU3ER slider -->
-        <script type="text/javascript">
-        var flashvars = {};
-        flashvars.xml = "config.xml";
-        flashvars.font = "font.swf";
-        var attributes = {};
-        attributes.wmode = "transparent";
-        attributes.id = "slider";
-        swfobject.embedSWF("{{ asset('cu3er.swf') }}", "cu3er-container", "920", "327", "9", "expressInstall.swf", flashvars, attributes);
-        </script>
-        {% endblock %}
+        
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block menu %}
+        {% endblock %}
+        {% block body %}
+            
+        {% endblock %}
     </body>
+    {% block js %}            
+        <script type="text/javascript" src="{{ asset('js/foundation.min.js') }}"></script>
+    {% endblock %}
 </html>

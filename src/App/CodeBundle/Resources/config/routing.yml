@@ -3,7 +3,7 @@ app_code:
     defaults: { _controller: AppCodeBundle:Code:index }
 
 app_code_login:
-    pattern: /
+    pattern: /login
     defaults: { _controller: AppCodeBundle:Code:login }
 
 app_code_login_check:
