@@ -24,7 +24,7 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255, unique=true)
      */
     private $title;
 
@@ -45,7 +45,7 @@ class Product
     /**
      * @var boolean
      *
-     * @ORM\Column(name="active", type="boolean")
+     * @ORM\Column(name="active", type="boolean", nullable=true)
      */
     private $active;
 

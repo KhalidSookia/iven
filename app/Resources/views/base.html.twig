@@ -3,8 +3,8 @@
     <head>
         <meta http-equiv="content-type" content="application/xhtml; charset=UTF-8" />
         <title>{% block title %}Music!{% endblock %}</title>
-        {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/foundation.min.css') }}" />
+        {% block stylesheets %}
         {% endblock %}
 
         
@@ -12,11 +12,16 @@
     <body>
         {% block menu %}
         {% endblock %}
-        {% block body %}
-            
-        {% endblock %}
+        <div class="row">
+            <div class="small-11 small-centered columns">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+
+
     </body>
-    {% block js %}            
         <script type="text/javascript" src="{{ asset('js/foundation.min.js') }}"></script>
+    {% block js %}            
     {% endblock %}
 </html>

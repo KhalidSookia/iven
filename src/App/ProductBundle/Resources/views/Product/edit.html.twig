@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends "AppAppBundle::layout.html.twig" %}
 
 {% block body -%}
     <h1>Product edit</h1>
@@ -13,4 +13,13 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "textarea"
+        });
+    </script>
 {% endblock %}

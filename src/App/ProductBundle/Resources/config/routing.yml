@@ -1,3 +1,27 @@
-app_product_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: AppProductBundle:Default:index }
+product:
+    pattern:  /product
+    defaults: { _controller: AppProductBundle:product:index }
+
+product_new:
+    pattern:  /product/new
+    defaults: { _controller: AppProductBundle:product:new }
+
+product_create:
+    pattern:  /product/create
+    defaults: { _controller: AppProductBundle:product:create }
+
+product_show:
+    pattern:  /product/{id}
+    defaults: { _controller: AppProductBundle:product:show }
+
+product_edit:
+    pattern:  product/{id}/edit
+    defaults: { _controller: AppProductBundle:product:edit }
+
+product_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: AppProductBundle:product:delete }
+
+product_update:
+    pattern:  /update/{id}
+    defaults: { _controller: AppProductBundle:product:update }

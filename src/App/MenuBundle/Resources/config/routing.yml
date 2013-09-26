@@ -15,9 +15,13 @@ menu_show:
     defaults: { _controller: AppMenuBundle:menu:show }
 
 menu_edit:
-    pattern:  /{id}/edit
+    pattern:  /menu/{id}/edit
     defaults: { _controller: AppMenuBundle:menu:edit }
 
 menu_delete:
-    pattern:  /delete/{id}
+    pattern:  /menu/delete/{id}
     defaults: { _controller: AppMenuBundle:menu:delete }
+
+menu_update:
+    pattern:  /menu/update/{id}
+    defaults: { _controller: AppMenuBundle:menu:update }
