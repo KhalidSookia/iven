@@ -5,3 +5,7 @@ app_app_homepage:
 app_app_authenticated:
     pattern:  /authenticated
     defaults: { _controller: AppAppBundle:App:authenticated }
+
+app_app_product:
+    pattern:  /view/product/{slug}
+    defaults: { _controller: AppAppBundle:App:body }

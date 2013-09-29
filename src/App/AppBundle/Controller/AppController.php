@@ -14,4 +14,16 @@ class AppController extends Controller
     public function authenticatedAction(){
         return $this->render('AppAppBundle:Authenticated:index.html.twig', array());
     }
+
+    public function bodyAction($slug){
+        $em = $this->getDoctrine()->getManager();
+
+        $product = $em->getRepository('AppProductBundle:Product')->findBySlug($slug);
+
+        if (!$product) {
+            throw $this->createNotFoundException('Unable to find Product product.');
+        }
+
+        return $this->render('AppAppBundle:Product:index.html.twig', array('products' => $product));
+    }
 }

@@ -1,0 +1,32 @@
+{% extends "AppAppBundle::layout.html.twig" %}
+
+{% block body %}
+{% for product in products %}
+
+    <div class="title">
+        {{ product.title }}
+    </div>
+    
+    <br>
+    <br>
+
+    <div class="pdt_img">
+        <img src="{{asset('images/iven_main.gif')}}" alt="Test">
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="panel">
+            {{ product.description }}
+        </div>
+    </div>
+
+
+
+
+
+
+   {% endfor %}   
+{% endblock %}
