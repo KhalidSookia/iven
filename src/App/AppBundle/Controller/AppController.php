@@ -18,7 +18,8 @@ class AppController extends Controller
     public function bodyAction($slug){
         $em = $this->getDoctrine()->getManager();
 
-        $product = $em->getRepository('AppProductBundle:Product')->findBySlug($slug);
+        $product = $em->getRepository('AppProductBundle:Product')->findBy(
+            array('active' => true, 'slug' => $slug));
 
         if (!$product) {
             throw $this->createNotFoundException('Unable to find Product product.');

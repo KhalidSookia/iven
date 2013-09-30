@@ -38,13 +38,6 @@ class Product
     private $description;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="path", type="string", length=255)
-     */
-    private $path;
-
-    /**
      * @var boolean
      *
      * @ORM\Column(name="active", type="boolean", nullable=true)
@@ -112,29 +105,6 @@ class Product
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Set path
-     *
-     * @param string $path
-     * @return Product
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-    
-        return $this;
-    }
-
-    /**
-     * Get path
-     *
-     * @return string 
-     */
-    public function getPath()
-    {
-        return $this->path;
     }
 
     /**

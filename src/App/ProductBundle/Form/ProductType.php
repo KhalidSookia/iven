@@ -17,7 +17,6 @@ class ProductType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('path')
             ->add('active')
         ;
     }

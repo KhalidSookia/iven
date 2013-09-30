@@ -4,9 +4,9 @@
 {% for product in products %}
 
     <div class="title">
-        {{ product.title }}
+        {{ product.title | upper }}
     </div>
-    
+
     <br>
     <br>
 
@@ -19,7 +19,7 @@
 
     <div class="row">
         <div class="panel">
-            {{ product.description }}
+            {{ product.description | raw }}
         </div>
     </div>
 
