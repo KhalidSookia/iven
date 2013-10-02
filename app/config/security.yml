@@ -22,12 +22,12 @@ security:
             pattern: ^/
             anonymous: true
             provider: main
-            form_login:
-                login_path: app_code_login
-                check_path: app_code_login_check
-            logout:
-                path: app_code_logout
-                target: /
+            # form_login:
+            #     login_path: app_code_login
+            #     check_path: app_code_login_check
+            # logout:
+            #     path: app_code_logout
+            #     target: /
 
     access_control:
         - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }

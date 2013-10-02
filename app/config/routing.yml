@@ -6,10 +6,6 @@ app_menu:
     resource: "@AppMenuBundle/Resources/config/routing.yml"
     prefix:   /
 
-app_code:
-    resource: "@AppCodeBundle/Resources/config/routing.yml"
-    prefix:   /
-
 app_app:
     resource: "@AppAppBundle/Resources/config/routing.yml"
     prefix:   /
