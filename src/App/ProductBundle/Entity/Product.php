@@ -152,4 +152,33 @@ class Product
     {
         return $this->slug;
     }
+
+    /**
+    * @ORM\OneToOne(targetEntity="App\ProductBundle\Entity\Image", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=true)
+    */
+    private $image;
+
+    /**
+     * Set image
+     *
+     * @param \App\ProductBundle\Entity\Image $image
+     * @return Product
+     */
+    public function setImage(\App\ProductBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+    
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \App\ProductBundle\Entity\Image 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

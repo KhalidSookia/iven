@@ -10,9 +10,12 @@
     <br>
     <br>
 
+    {% if product.image.url != null %}
+
     <div class="pdt_img">
-        <img src="{{asset('images/iven_main.gif')}}" alt="Test">
+        <img src="{{asset('uploads/img/')}}{{ product.image.url }}" alt="Test">
     </div>
+    {% endif %}
 
     <br>
     <br>

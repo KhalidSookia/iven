@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use App\ProductBundle\Entity\Product;
+use App\ProductBundle\Entity\Image;
 use App\ProductBundle\Form\ProductType;
 
 /**
@@ -47,12 +48,15 @@ class ProductController extends Controller
         $entity = new Product();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
+        
+        if($form->isValid()){
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+            $entity->getImage()->upload();
             $em->flush();
 
             return $this->redirect($this->generateUrl('product_show', array('id' => $entity->getId())));
+        }
 
         return array(
             'entity' => $entity,
