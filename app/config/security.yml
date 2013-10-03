@@ -21,7 +21,7 @@ security:
         main:
             pattern: ^/
             anonymous: true
-            provider: main
+            # provider: main
             # form_login:
             #     login_path: app_code_login
             #     check_path: app_code_login_check
