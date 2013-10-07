@@ -66,7 +66,7 @@ class Code
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="first_access_at", type="datetime")
+     * @ORM\Column(name="first_access_at", type="datetime", nullable=true)
      */
     private $firstAccessAt;
 

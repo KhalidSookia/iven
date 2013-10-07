@@ -44,19 +44,25 @@ class CodeController extends Controller
      */
     public function createAction(Request $request)
     {
+        $salt = (base_convert(sha1(uniqid(mt_rand(), true)), 16, 36));
+        $saveCode = uniqid();
+
         $entity = new Code();
 
-        $entity->setSalt(base_convert(sha1(uniqid(mt_rand(), true)), 16, 36));
+        $entity->setSalt($salt);
         $entity->setRoles(array());
         $entity->setCreatedAt(new \Datetime);
-        $entity->setFirstAccessAt(new \Datetime);
+        // $entity->setFirstAccessAt(new \Datetime);
+        $entity->setCode($salt.$saveCode);
 
-        $saveCode = uniqid();
 
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
+            
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
