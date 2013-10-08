@@ -19,7 +19,7 @@ product_edit:
     defaults: { _controller: AppProductBundle:product:edit }
 
 product_delete:
-    pattern:  /delete/{id}
+    pattern:  product/delete/{id}
     defaults: { _controller: AppProductBundle:product:delete }
 
 product_update:

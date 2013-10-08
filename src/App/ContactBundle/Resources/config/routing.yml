@@ -1,0 +1,15 @@
+contact_view:
+    pattern:  /contact/view
+    defaults: { _controller: AppContactBundle:contact:index }
+
+contact:
+    pattern:  /contact
+    defaults: { _controller: AppContactBundle:contact:new }
+
+contact_create:
+    pattern:  /contact/create
+    defaults: { _controller: AppContactBundle:contact:create }
+
+contact_show:
+    pattern:  /contact/{id}
+    defaults: { _controller: AppContactBundle:contact:show }

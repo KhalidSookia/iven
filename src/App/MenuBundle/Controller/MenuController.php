@@ -250,9 +250,9 @@ class MenuController extends Controller
 
         $menus = $em->getRepository('AppMenuBundle:Menu')->findAll();
 
-        if($menus == null){
-            throw $this->createNotFoundException('Menu non trouvé !!! Contacter le webmaster');
-        }
+        // if($menus == null){
+        //     throw $this->createNotFoundException('Menu non trouvé !!! Contacter le webmaster');
+        // }
         return $this->render('AppMenuBundle:Menu:menu.html.twig', array('menus' => $menus));
     }
 }

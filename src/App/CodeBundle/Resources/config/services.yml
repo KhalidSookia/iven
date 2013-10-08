@@ -1,7 +1,0 @@
-parameters:
-#    app_code.example.class: App\CodeBundle\Example
-
-services:
-#    app_code.example:
-#        class: %app_code.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

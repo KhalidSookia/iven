@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new App\MenuBundle\AppMenuBundle(),
             new App\ProductBundle\AppProductBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new App\CodeBundle\AppCodeBundle(),
+            new App\ContactBundle\AppContactBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

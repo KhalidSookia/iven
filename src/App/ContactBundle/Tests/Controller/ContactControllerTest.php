@@ -1,10 +1,10 @@
 <?php
 
-namespace App\CodeBundle\Tests\Controller;
+namespace App\ContactBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class CodeControllerTest extends WebTestCase
+class ContactControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class CodeControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/code/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /code/");
+        $crawler = $client->request('GET', '/contact/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /contact/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'app_codebundle_codetype[field_name]'  => 'Test',
+            'app_contactbundle_contacttype[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class CodeControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Edit')->form(array(
-            'app_codebundle_codetype[field_name]'  => 'Foo',
+            'app_contactbundle_contacttype[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

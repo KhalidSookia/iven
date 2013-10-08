@@ -1,12 +1,12 @@
 <?php
 
-namespace App\CodeBundle\Form;
+namespace App\ContactBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class CodeType extends AbstractType
+class ContactType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
@@ -15,9 +15,10 @@ class CodeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('name')
             ->add('email')
-            ->add('validity')
-            ->add('enabled')
+            ->add('subject')
+            ->add('content')
         ;
     }
     
@@ -27,7 +28,7 @@ class CodeType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'App\CodeBundle\Entity\Code'
+            'data_class' => 'App\ContactBundle\Entity\Contact'
         ));
     }
 
@@ -36,6 +37,6 @@ class CodeType extends AbstractType
      */
     public function getName()
     {
-        return 'app_codebundle_code';
+        return 'app_contactbundle_contact';
     }
 }

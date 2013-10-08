@@ -1,5 +1,5 @@
-app_code:
-    resource: "@AppCodeBundle/Resources/config/routing.yml"
+app_contact:
+    resource: "@AppContactBundle/Resources/config/routing.yml"
     prefix:   /
 
 app_product:
