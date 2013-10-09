@@ -1,29 +1,9 @@
-<nav class="top-bar">
-  <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><a href="{{ path('app_app_homepage') }}">IVEN </a></h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
 
-  <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    
-
-    <!-- Right Nav Section -->
     <ul class="right">
-      <li class="divider"></li>
       {% for menu in menus %}
         <li class="active"><a href="{{ path('app_app_product', {'slug':menu.path}) }}">{{ menu.name }}</a></li>
-        <li class="divider hide-for-small"></li>
       {% endfor %}
       <li class="active">
         <a href="{{ path('contact') }}" title="">Nous Contacter</a>
       </li>
     </ul>
-
-        
-  </section>
-</nav>
