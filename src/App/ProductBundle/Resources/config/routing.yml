@@ -23,5 +23,95 @@ product_delete:
     defaults: { _controller: AppProductBundle:product:delete }
 
 product_update:
-    pattern:  /update/{id}
+    pattern:  product/update/{id}
     defaults: { _controller: AppProductBundle:product:update }
+
+# --------------------------------
+
+frontbox:
+    pattern:  /frontbox
+    defaults: { _controller: AppProductBundle:frontbox:index }
+
+frontbox_new:
+    pattern:  /frontbox/new
+    defaults: { _controller: AppProductBundle:frontbox:new }
+
+frontbox_create:
+    pattern:  /frontbox/create
+    defaults: { _controller: AppProductBundle:frontbox:create }
+
+frontbox_show:
+    pattern:  /frontbox/{id}
+    defaults: { _controller: AppProductBundle:frontbox:show }
+
+frontbox_edit:
+    pattern:  frontbox/{id}/edit
+    defaults: { _controller: AppProductBundle:frontbox:edit }
+
+frontbox_delete:
+    pattern:  frontbox/delete/{id}
+    defaults: { _controller: AppProductBundle:frontbox:delete }
+
+frontbox_update:
+    pattern:  frontbox/update/{id}
+    defaults: { _controller: AppProductBundle:frontbox:update }
+
+# --------------------------------
+
+frontbottom:
+    pattern:  /frontbottom
+    defaults: { _controller: AppProductBundle:frontbottom:index }
+
+frontbottom_new:
+    pattern:  /frontbottom/new
+    defaults: { _controller: AppProductBundle:frontbottom:new }
+
+frontbottom_create:
+    pattern:  /frontbottom/create
+    defaults: { _controller: AppProductBundle:frontbottom:create }
+
+frontbottom_show:
+    pattern:  /frontbottom/{id}
+    defaults: { _controller: AppProductBundle:frontbottom:show }
+
+frontbottom_edit:
+    pattern:  frontbottom/{id}/edit
+    defaults: { _controller: AppProductBundle:frontbottom:edit }
+
+frontbottom_delete:
+    pattern:  frontbottom/delete/{id}
+    defaults: { _controller: AppProductBundle:frontbottom:delete }
+
+frontbottom_update:
+    pattern:  frontbottom/update/{id}
+    defaults: { _controller: AppProductBundle:frontbottom:update }
+
+# --------------------------------
+
+slider:
+    pattern:  /slider
+    defaults: { _controller: AppProductBundle:slider:index }
+
+slider_new:
+    pattern:  /slider/new
+    defaults: { _controller: AppProductBundle:slider:new }
+
+slider_create:
+    pattern:  /slider/create
+    defaults: { _controller: AppProductBundle:slider:create }
+
+slider_show:
+    pattern:  /slider/{id}
+    defaults: { _controller: AppProductBundle:slider:show }
+
+slider_edit:
+    pattern:  slider/{id}/edit
+    defaults: { _controller: AppProductBundle:slider:edit }
+
+slider_delete:
+    pattern:  slider/delete/{id}
+    defaults: { _controller: AppProductBundle:slider:delete }
+
+slider_update:
+    pattern:  slider/update/{id}
+    defaults: { _controller: AppProductBundle:slider:update }

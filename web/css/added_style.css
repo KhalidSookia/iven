@@ -1,0 +1,36 @@
+.frontpage_box_img{
+    max-height: 60px;
+    max-width: 60px;
+    overflow: hidden;
+}
+
+.frontpage_added_style{
+    margin-bottom: 20px;
+    /*margin-right: 5px;*/
+    margin-left: 15px;
+}
+
+.col_w420{
+    margin-bottom: 25px;
+}
+
+input[type="Text"]{
+    width: 380px; font-size: 12px; color: #333; padding: 5px; 
+    height: 20px; border: 1px solid #ccc;  background: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+}
+
+
+#cp_contact_form { padding: 0; width: 380px }
+#cp_contact_form form { margin: 0px; padding: 0px; }
+
+#cp_contact_form form .input_field { 
+    width: 380px; font-size: 12px; color: #333; padding: 5px; 
+    height: 20px; border: 1px solid #ccc;  background: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+
+#cp_contact_form form label { display: block; width: 220px; margin-bottom: 5px; font-size: 12px; color: #000; }
+
+#cp_contact_form form textarea { 
+    width: 380px; height: 160px; padding: 5px; color: #333; 
+    border: 1px solid #ccc;  background: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+    
+#cp_contact_form form .submit_btn { margin: 10px 0px; padding: 5px 14px; border: 1px solid #ccc; background: #fff; }

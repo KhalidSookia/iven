@@ -3,16 +3,14 @@
 namespace App\ProductBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Product
+ * Slider
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="App\ProductBundle\Entity\ProductRepository")
+ * @ORM\Entity(repositoryClass="App\ProductBundle\Entity\SliderRepository")
  */
-class Product
+class Slider
 {
     /**
      * @var integer
@@ -26,16 +24,9 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255, unique=true)
+     * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text", nullable=true)
-     */
-    private $description;
 
     /**
      * @var boolean
@@ -45,11 +36,10 @@ class Product
     private $active;
 
     /**
-     * @Gedmo\Slug(fields={"title"})
-     * @ORM\Column(length=128, unique=true)
-     */
-    private $slug;
-
+    * @ORM\OneToOne(targetEntity="App\ProductBundle\Entity\Image", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $image;
 
     /**
      * Get id
@@ -65,7 +55,7 @@ class Product
      * Set title
      *
      * @param string $title
-     * @return Product
+     * @return Slider
      */
     public function setTitle($title)
     {
@@ -85,33 +75,10 @@ class Product
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     * @return Product
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string 
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
      * Set active
      *
      * @param boolean $active
-     * @return Product
+     * @return Slider
      */
     public function setActive($active)
     {
@@ -131,41 +98,12 @@ class Product
     }
 
     /**
-     * Set slug
-     *
-     * @param string $slug
-     * @return Product
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-    
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string 
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
-    * @ORM\OneToOne(targetEntity="App\ProductBundle\Entity\Image", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=true)
-    */
-    private $image;
-
-    /**
      * Set image
      *
      * @param \App\ProductBundle\Entity\Image $image
-     * @return Product
+     * @return Slider
      */
-    public function setImage(\App\ProductBundle\Entity\Image $image = null)
+    public function setImage(\App\ProductBundle\Entity\Image $image)
     {
         $this->image = $image;
     

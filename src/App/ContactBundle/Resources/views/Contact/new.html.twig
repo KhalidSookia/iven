@@ -1,15 +1,55 @@
 {% extends "AppAppBundle::layout.html.twig" %}
 
 {% block body -%}
-    <h1>Contact creation</h1>
 
-    {{ form(form) }}
 
-        <ul class="record_actions">
-            <li>
-                <a href="{{ path('contact') }}">
-                   Back to the list
-                </a>
-            </li>
-        </ul>
+
+    <div id="templatemo_main">
+    
+    <div class="col_w900 col_w900_last">
+    
+          <div class="col_w420 float_l">
+          
+              <h3>Formulaire de Contact</h3>
+              
+              <div id="cp_contact_form">
+              
+                {{ form_start(form) }} 
+                {{ form_row(form.name, {'label': 'Name:'}) }}
+                {{ form_row(form.email, {'label': 'Email:'}) }}
+                {{ form_row(form.subject, {'label': 'Sujet:'}) }}
+                {{ form_row(form.content, {'label': 'Message:'}) }}
+                <div class="cleaner_h10"></div>
+                            
+                            <input type="reset" class="submit_btn float_r" name="reset" id="reset" value="Reset" />
+                            <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Send" />
+                {{ form_end(form) }}    
+            </div>
+               
+      </div>
+            
+            <div class="col_w420 float_r" id="map">
+                <h6>Nous contacter</h6>
+                Email: sebastienk@iven-invest.com <br /> 
+                Tel: +33 6 14 92 29 28<br />
+            </div>
+            
+            <div class="cleaner"></div>
+      </div>
+        
+        <div class="cleaner"></div>
+        
+        <span class="bottom"></span>    
+    </div> 
+    
+
+{% block js %}
+<script language="javascript" type="text/javascript">
+    function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+{% endblock %}
 {% endblock %}

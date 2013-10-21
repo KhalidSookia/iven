@@ -8,11 +8,34 @@ class AppController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('AppAppBundle:App:index.html.twig', array());
-    }
+        $em = $this->getDoctrine()->getManager();
 
-    public function authenticatedAction(){
-        return $this->render('AppAppBundle:Authenticated:index.html.twig', array());
+        $frontBox = $em->getRepository('AppProductBundle:FrontBox')->findBy(
+            array('active' => true));
+
+        $frontBottomR = $em->getRepository('AppProductBundle:FrontBottom')->findBy(
+            array(
+                'active' => true,
+                'rl' => true
+                ));
+
+        $frontBottomL = $em->getRepository('AppProductBundle:FrontBottom')->findBy(
+            array(
+                'active' => true,
+                'rl' => false
+                ));
+
+        $slider = $em->getRepository('AppProductBundle:slider')->findBy(
+            array(
+                'active' => true,
+                ));
+
+        return $this->render('AppAppBundle:App:index.html.twig', array(
+            'frontBoxs' => $frontBox,
+            'frontBottomsR' => $frontBottomR,
+            'frontBottomsL' => $frontBottomL,
+            'sliders' => $slider
+            ));
     }
 
     public function bodyAction($slug){
