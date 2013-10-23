@@ -5,3 +5,36 @@ app_app_homepage:
 app_app_product:
     pattern:  /view/product/{slug}
     defaults: { _controller: AppAppBundle:App:body }
+
+# footer
+footer:
+    pattern:  /footer
+    defaults: { _controller: AppAppBundle:Footer:index }
+
+footer_new:
+    pattern:  /footer/new
+    defaults: { _controller: AppAppBundle:Footer:new }
+
+footer_create:
+    pattern:  /footer/create
+    defaults: { _controller: AppAppBundle:Footer:create }
+
+footer_show:
+    pattern:  /footer/{id}
+    defaults: { _controller: AppAppBundle:Footer:show }
+
+footer_edit:
+    pattern:  footer/{id}/edit
+    defaults: { _controller: AppAppBundle:Footer:edit }
+
+footer_delete:
+    pattern:  footer/delete/{id}
+    defaults: { _controller: AppAppBundle:Footer:delete }
+
+footer_update:
+    pattern:  footer/update/{id}
+    defaults: { _controller: AppAppBundle:Footer:update }
+
+admin:
+    pattern:  /admin
+    defaults: { _controller:AppAppBundle:App:admin }

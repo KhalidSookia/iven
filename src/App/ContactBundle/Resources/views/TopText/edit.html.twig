@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>TopText edit</h1>
+<div id="templatemo_main">
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('toptext') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+</div>
+{% block js %}
+        <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "textarea"
+        });
+    </script>
+{% endblock %}
+{% endblock %}

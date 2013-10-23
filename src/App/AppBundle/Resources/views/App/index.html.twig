@@ -17,7 +17,7 @@
                 <span class="tagline">{{ frontBox.subtitle }}</span>
                 <img src="{{ asset('uploads/img/') }}{{ frontBox.image.url }}" alt="Image" class="frontpage_box_img" />
                 <p>{{ frontBox.text }}</p>
-                <a class="more" href="">Voir Plus</a>
+                <a class="more" href="{{ frontBox.link }}">Voir Plus</a>
             </div>
         {% endfor %}
         <div class="cleaner"></div>

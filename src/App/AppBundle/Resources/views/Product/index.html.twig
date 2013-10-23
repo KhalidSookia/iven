@@ -1,28 +1,20 @@
 {% extends "AppAppBundle::layout.html.twig" %}
 
 {% block body %}
-{% for product in products %}
+    {% for product in products %}
+    <div id="slider_wrapper_n">
+        <div class="title">
+            <h2>{{ product.title | upper }}</h2>
+        </div>
 
-    <div class="title">
-        {{ product.title | upper }}
+        {% if product.image.url != null %}
+            <img src="{{asset('uploads/img/')}}{{ product.image.url }}" alt="Test">
+        {% endif %}
     </div>
-
-    <br>
-    <br>
-
-    {% if product.image.url != null %}
-
-    <div class="pdt_img">
-        <img src="{{asset('uploads/img/')}}{{ product.image.url }}" alt="Test">
-    </div>
-    {% endif %}
-
-    <br>
-    <br>
-
-    <div class="row">
-        <div class="panel">
+    <div id="templatemo_main">
+        <div class="pdp">
             {{ product.description | raw }}
+            <span class="bottom"></span>  
         </div>
     </div>
 

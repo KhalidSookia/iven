@@ -2,6 +2,7 @@
 
 {% block body -%}
     <h1>Product list</h1>
+<div id="templatemo_main">
 
     <table class="records_list">
         <thead>
@@ -23,25 +24,26 @@
                 <td>{{ entity.active }}</td>
                 <td>{{ entity.slug }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('product_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('product_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a href="{{ path('product_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('product_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
+    <ul>
         <li>
             <a href="{{ path('product_new') }}">
                 Create a new entry
             </a>
         </li>
     </ul>
-    {% endblock %}
+</div>
+{% endblock %}

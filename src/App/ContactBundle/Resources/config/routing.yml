@@ -13,3 +13,32 @@ contact_create:
 contact_show:
     pattern:  /contact/{id}
     defaults: { _controller: AppContactBundle:contact:show }
+
+
+toptext:
+    pattern:  /toptext
+    defaults: { _controller: AppContactBundle:toptext:index }
+
+toptext_new:
+    pattern:  /toptext/new
+    defaults: { _controller: AppContactBundle:toptext:new }
+
+toptext_create:
+    pattern:  /toptext/create
+    defaults: { _controller: AppContactBundle:toptext:create }
+
+toptext_show:
+    pattern:  /toptext/{id}
+    defaults: { _controller: AppContactBundle:toptext:show }
+
+toptext_edit:
+    pattern:  toptext/{id}/edit
+    defaults: { _controller: AppContactBundle:toptext:edit }
+
+toptext_delete:
+    pattern:  toptext/delete/{id}
+    defaults: { _controller: AppContactBundle:toptext:delete }
+
+toptext_update:
+    pattern:  toptext/update/{id}
+    defaults: { _controller: AppContactBundle:toptext:update }

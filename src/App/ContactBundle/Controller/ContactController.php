@@ -48,7 +48,8 @@ class ContactController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
-        $entity->setCreatedAt(new \Datetime);
+
+
 
         if ($form->isValid()) {
 
@@ -81,7 +82,10 @@ class ContactController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Envoyer'));
+
+        $form->add('submit', 'submit', array('label' => 'Envoyer', 'attr' => array('class' => 'submit_btn float_l')));
+
+        $form->add('reset', 'reset', array('label' => 'Reset', 'attr' => array('class' => 'submit_btn float_r')));
 
         return $form;
     }
@@ -97,10 +101,17 @@ class ContactController extends Controller
     {
         $entity = new Contact();
         $form   = $this->createCreateForm($entity);
+        $entity->setCreatedAt(new \Datetime);
+        $em = $this->getDoctrine()->getManager();
+        $topText = $em->getRepository('AppContactBundle:TopText')->findBy(
+            array(
+                'active' => true
+            ));
 
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'topTexts' => $topText,
         );
     }
 

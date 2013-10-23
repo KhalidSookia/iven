@@ -50,4 +50,8 @@ class AppController extends Controller
 
         return $this->render('AppAppBundle:Product:index.html.twig', array('products' => $product));
     }
+
+    public function adminAction(){
+        return $this->render('AppAppBundle:Admin:admin.html.twig');
+    }
 }
