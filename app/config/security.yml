@@ -1,6 +1,7 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: sha512
+        Symfony\Component\Security\Core\User\User: plaintext
+        App\UserBundle\Entity\User: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -8,10 +9,7 @@ security:
 
     providers:
         main:
-            memory:
-                users:
-                    user: { password: userpass, roles: ['ROLE_USER' ] }
-                    admin: { password: adminpass, roles: ['ROLE_ADMIN' ] }
+            id: fos_user.user_provider.username
 
     firewalls:
         dev:
@@ -21,13 +19,12 @@ security:
         main:
             pattern: ^/
             anonymous: true
-            # provider: main
-            # form_login:
-            #     login_path: app_code_login
-            #     check_path: app_code_login_check
-            # logout:
-            #     path: app_code_logout
-            #     target: /
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+            logout:
+                path: fos_user_security_logout
+                target: /
 
     access_control:
         - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }

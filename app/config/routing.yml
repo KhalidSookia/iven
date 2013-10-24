@@ -1,3 +1,7 @@
+app_user:
+    resource: "@AppUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app_contact:
     resource: "@AppContactBundle/Resources/config/routing.yml"
     prefix:   /
@@ -13,4 +17,3 @@ app_menu:
 app_app:
     resource: "@AppAppBundle/Resources/config/routing.yml"
     prefix:   /
-
