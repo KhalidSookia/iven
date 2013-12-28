@@ -17,7 +17,7 @@
                 <span class="tagline">{{ frontBox.subtitle }}</span>
                 <img src="{{ asset('uploads/img/') }}{{ frontBox.image.url }}" alt="Image" class="frontpage_box_img" />
                 <p>{{ frontBox.text }}</p>
-                <a class="more" href="{{ frontBox.link }}">Voir Plus</a>
+                <a class="more" href="{{ path('app_app_product', {'slug':frontBox.link}) }}">Voir Plus</a>
             </div>
         {% endfor %}
         <div class="cleaner"></div>
@@ -36,12 +36,10 @@
         {% for frontBottomR in frontBottomsR %}
             <div class="col_w420 float_r">
                 <h2>{{ frontBottomR.title }}</h2>
-                <div class="lbe_box">
                     <p>{{ frontBottomR.text }}</p>
                     <a class="more" href="{{ frontBottomR.link }}">More</a>
-                </div>
-                <div class="cleaner"></div>
             </div>
+            <div class="cleaner"></div>
         {% endfor %}
 
         <div class="cleaner"></div>

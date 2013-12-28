@@ -41,6 +41,7 @@ input[type="Text"]{
     width: 960px;
     padding: 0;
     overflow: hidden;
+    padding-bottom: 25px;
 }
 
 #slider_wrapper_n h2{
