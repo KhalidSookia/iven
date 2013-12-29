@@ -1,0 +1,27 @@
+{% extends "AppAppBundle::layout.html.twig" %}
+
+{% block body %}
+    <div id="templatemo_main">
+    	{% if error %}
+    		<div class="alert">
+    			{{ error.message }}
+    		</div>
+    	{% endif %}
+
+    	<form action="{{ path('login_check') }}" method="post" accept-charset="utf-8" id="cp_contact_form">
+    		<label for="username">Utilisateur</label>
+    		<input type="text" name="_username" id="username" value="{{ last_username }}">
+
+    		<br>
+    		<br>
+
+    		<label for="password">Mot de passe</label>
+    		<input type="password" name="_password" id="password">
+
+    		<br>
+    		<br>
+    		<input type="submit" value="Connexion">
+    		
+    	</form>
+    </div>
+{% endblock %}

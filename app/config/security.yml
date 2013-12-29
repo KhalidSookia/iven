@@ -8,8 +8,10 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        main:
-            id: fos_user.user_provider.username
+        in_memory:
+            memory:
+                users:
+                    sebastien01978: { password: tbk1986!, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
@@ -19,13 +21,23 @@ security:
         main:
             pattern: ^/
             anonymous: true
+            provider: in_memory
             form_login:
-                login_path: fos_user_security_login
-                check_path: fos_user_security_check
+                login_path: login
+                check_path: login_check
+                default_target_path: /admin
             logout:
-                path: fos_user_security_logout
+                path: logout
                 target: /
 
     access_control:
-        - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/contact/, roles: ROLE_ADMIN }
+        - { path: ^/toptext, roles: ROLE_ADMIN }
+        - { path: ^/product, roles: ROLE_ADMIN }
+        - { path: ^/frontbox, roles: ROLE_ADMIN }
+        - { path: ^/frontbottom, roles: ROLE_ADMIN }
+        - { path: ^/slider, roles: ROLE_ADMIN }
+        - { path: ^/menu, roles: ROLE_ADMIN }
+        - { path: ^/footer, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/login_check, roles: ROLE_ADMIN }
