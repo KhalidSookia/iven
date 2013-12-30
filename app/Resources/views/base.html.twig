@@ -24,8 +24,6 @@
         
         <div id="site_title"><h1><a href="{{ path('app_app_homepage')}}"></a></h1></div>
         
-        <div id="twitter"><a class="twitter rss_twitter" href="http://www.facebook.com/templatemo">Powered by KNSA</a></div>
-
         <div class="cleaner"></div>
     </div>
     
@@ -37,9 +35,15 @@
     {% block slider %}
         
     {% endblock %}
+      
     {% block image %}
         
     {% endblock %}
+    {% for message in app.session.flashbag.get('info') %}
+        <div class="success">
+            <p>{{ message }}</p>
+        </div>
+    {% endfor %}
 
     {% block body %}
     {% endblock %}

@@ -59,7 +59,18 @@ class ContactController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('contact_show', array('id' => $entity->getId())));
+             $message = \Swift_Message::newInstance()
+            ->setSubject('Contact from Iven')
+            ->setFrom('no-reply@iven-invest.com')
+            ->setTo('contact@iven-invest.com')
+            ->setBody("Un nouveau contact a été fait sur IVEN.");
+            
+            $this->get('mailer')->send($message);
+
+            $this->get('session')->getFlashBag()->add('info', 'Votre message a bien été envoyé.');
+
+
+            return $this->redirect($this->generateUrl('app_app_homepage'));
         }
 
         return array(

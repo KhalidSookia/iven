@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Contact
 {
+    public function __construct(){
+        $this->createdAt = new \Datetime();
+    }
     /**
      * @var integer
      *

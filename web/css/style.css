@@ -66,9 +66,7 @@ a.more:hover { text-decoration: none; color: #faca39; }
 
 #site_title { float: left; }
 #site_title h1 { margin: 0; padding: 0 }
-#site_title h1 a { display: block; width: 275px; height: 57px; color: #F60; text-indent: -10000px; background: url(../images/templatemo_logo.png) no-repeat }
-
-#twitter a{ float: right; font-weight: normal; display: block; padding: 13px 50px 13px 0; color: #f0c132; font-size: 18px; background: url(../images/twitter.png)  no-repeat right center }
+#site_title h1 a { display: block; width: 275px; height: 57px; color: #F60; text-indent: -10000px; background: url(../images/logo.png) no-repeat }
 
 /* menu */
 #templatemo_menu {

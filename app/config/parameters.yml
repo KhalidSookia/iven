@@ -7,8 +7,8 @@ parameters:
     database_user: root
     database_password: null
     mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
-    locale: en
+    mailer_host: auth.smtp.1and1.fr
+    mailer_user: contact@iven-invest.com
+    mailer_password: tbk1986!
+    locale: fr
     secret: T54654wqsdfszq16354sNotoensdfgqsdgqsdfqsf521545geIt
