@@ -5,6 +5,8 @@ if (!isset($_SERVER['HTTP_HOST'])) {
 }
 
 
+require_once dirname(__FILE__).'/../app/SymfonyRequirements.php';
+
 $symfonyRequirements = new SymfonyRequirements();
 
 $majorProblems = $symfonyRequirements->getFailedRequirements();

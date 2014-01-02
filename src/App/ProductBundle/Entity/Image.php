@@ -66,7 +66,7 @@ class Image
         return $this->url;
     }
 
-    public $file;
+    private $file;
     private $tempFilename;
 
     public function setFile(UploadedFile $file){

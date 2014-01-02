@@ -1,11 +1,11 @@
 # This file is auto-generated during the composer install
 parameters:
     database_driver: pdo_mysql
-    database_host: 127.0.0.1
+    database_host: db390117458.db.1and1.com
     database_port: null
-    database_name: iven
-    database_user: root
-    database_password: null
+    database_name: db390117458
+    database_user: dbo390117458
+    database_password: tbk1986!
     mailer_transport: smtp
     mailer_host: auth.smtp.1and1.fr
     mailer_user: contact@iven-invest.com
