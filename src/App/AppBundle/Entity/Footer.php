@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Footer
  *
- * @ORM\Table()
+ * @ORM\Table(name="footer")
  * @ORM\Entity(repositoryClass="App\AppBundle\Entity\FooterRepository")
  */
 class Footer

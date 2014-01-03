@@ -1,10 +1,10 @@
 # This file is auto-generated during the composer install
 parameters:
     database_driver: pdo_mysql
-    database_host: db390117458.db.1and1.com
-    database_port: null
-    database_name: db390117458
-    database_user: dbo390117458
+    database_host: db509121913.db.1and1.com
+    database_port: 3306
+    database_name: db509121913
+    database_user: dbo509121913
     database_password: tbk1986!
     mailer_transport: smtp
     mailer_host: auth.smtp.1and1.fr

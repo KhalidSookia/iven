@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TopText
  *
- * @ORM\Table()
+ * @ORM\Table(name="toptext")
  * @ORM\Entity(repositoryClass="App\ContactBundle\Entity\TopTextRepository")
  */
 class TopText
